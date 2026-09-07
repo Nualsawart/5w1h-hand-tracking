@@ -5,60 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>5W1H แก้ปัญหาเทคโนโลยีด้วยปลายนิ้ว</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,"Noto Sans Thai",sans-serif;background:linear-gradient(135deg,#eef5ff,#fff8df);color:#183b66;min-height:100vh}
-.container{max-width:920px;margin:auto;padding:24px 16px}
-.header{text-align:center;margin-bottom:18px}
-.header h1{margin:0;font-size:clamp(30px,6vw,52px);font-weight:900}
-.header p{margin:6px 0;color:#55708f;font-size:18px}
-.card{background:#fff;border-radius:24px;padding:22px;box-shadow:0 10px 30px rgba(36,75,120,.12);margin-bottom:18px}
-.instructions{background:#fff5bf;border:2px solid #f4d96b}
-.instructions h2{margin:0 0 12px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.step{background:#fff;border-radius:16px;padding:12px;text-align:center;font-weight:800}
-.fingers{font-size:30px;margin-bottom:5px}
-button{border:0;border-radius:16px;padding:14px 22px;font-size:18px;font-weight:800;cursor:pointer}
-.start{display:block;width:100%;background:#4f7dff;color:#fff;margin-top:18px}
-.start:disabled{opacity:.6}
-.game{display:none}
-.progress-row{display:flex;justify-content:space-between;font-weight:800;margin-bottom:8px}
-.progress{height:12px;background:#e6edf7;border-radius:99px;overflow:hidden}
-.progress-bar{height:100%;width:20%;background:#4f7dff;transition:.3s}
-.question-title{font-size:28px;font-weight:900;margin:18px 0 12px}
-
-/* แก้เฉพาะส่วนรูปโจทย์: แสดงภาพครบและปรับตามขนาดหน้าจอ */
-.scenario-image{
-  width:100%;
-  height:auto;
-  max-width:100%;
-  max-height:55vh;
-  object-fit:contain;
-  border-radius:20px;
-  display:block;
-  margin:0 auto 16px;
-  background:#eef3fa;
-}
-
-.options{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.option{background:#f7faff;border:3px solid #d9e5f5;color:#183b66;text-align:left;min-height:70px}
-.option:disabled{cursor:default}
-.option.correct{background:#dcf8e7;border-color:#35a967}
-.option.wrong{background:#ffe1e1;border-color:#e05a5a}
-.camera-wrap{margin-top:18px;text-align:center}
-video{width:100%;max-width:520px;border-radius:22px;background:#111;transform:scaleX(-1)}
-.status{font-weight:800;margin-top:10px;min-height:28px}
-.score{text-align:center;font-weight:900}
-.game-over{display:none;text-align:center}
-.complete-label{display:inline-block;background:#183b66;color:#fff;border-radius:99px;padding:8px 18px;font-weight:900;letter-spacing:2px}
-.final-score{font-size:76px;font-weight:900;line-height:1;margin:16px 0;color:#4f7dff}
-.final-message{font-size:24px;font-weight:900;margin-bottom:20px}
-.restart{background:#ffc857;color:#183b66}
-.note{font-size:14px;color:#6a7d92;text-align:center;margin-top:12px}
-@media(max-width:600px){
-  .steps{grid-template-columns:1fr 1fr}
-  .options{grid-template-columns:1fr}
-  .question-title{font-size:23px}
-}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Thai",sans-serif;background:linear-gradient(135deg,#eef5ff,#fff8df);color:#183b66;min-height:100vh}.container{max-width:920px;margin:auto;padding:24px 16px}.header{text-align:center;margin-bottom:18px}.header h1{margin:0;font-size:clamp(30px,6vw,52px);font-weight:900}.header p{margin:6px 0;color:#55708f;font-size:18px}.card{background:#fff;border-radius:24px;padding:22px;box-shadow:0 10px 30px rgba(36,75,120,.12);margin-bottom:18px}.instructions{background:#fff5bf;border:2px solid #f4d96b}.instructions h2{margin:0 0 12px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.step{background:#fff;border-radius:16px;padding:12px;text-align:center;font-weight:800}.fingers{font-size:30px;margin-bottom:5px}button{border:0;border-radius:16px;padding:14px 22px;font-size:18px;font-weight:800;cursor:pointer}.start{display:block;width:100%;background:#4f7dff;color:#fff;margin-top:18px}.start:disabled{opacity:.6}.game{display:none}.progress-row{display:flex;justify-content:space-between;font-weight:800;margin-bottom:8px}.progress{height:12px;background:#e6edf7;border-radius:99px;overflow:hidden}.progress-bar{height:100%;width:20%;background:#4f7dff;transition:.3s}.question-title{font-size:28px;font-weight:900;margin:18px 0 12px}.scenario-image{width:100%;max-height:300px;object-fit:contain;border-radius:20px;display:block;margin-bottom:16px;background:#eef3fa}.options{display:grid;grid-template-columns:1fr 1fr;gap:12px}.option{background:#f7faff;border:3px solid #d9e5f5;color:#183b66;text-align:left;min-height:70px}.option:disabled{cursor:default}.option.correct{background:#dcf8e7;border-color:#35a967}.option.wrong{background:#ffe1e1;border-color:#e05a5a}.camera-wrap{margin-top:18px;text-align:center}video{width:100%;max-width:520px;border-radius:22px;background:#111;transform:scaleX(-1)}.status{font-weight:800;margin-top:10px;min-height:28px}.score{text-align:center;font-weight:900}.game-over{display:none;text-align:center}.complete-label{display:inline-block;background:#183b66;color:#fff;border-radius:99px;padding:8px 18px;font-weight:900;letter-spacing:2px}.final-score{font-size:76px;font-weight:900;line-height:1;margin:16px 0;color:#4f7dff}.final-message{font-size:24px;font-weight:900;margin-bottom:20px}.restart{background:#ffc857;color:#183b66}.note{font-size:14px;color:#6a7d92;text-align:center;margin-top:12px}@media(max-width:600px){.steps{grid-template-columns:1fr 1fr}.options{grid-template-columns:1fr}.question-title{font-size:23px}}
 </style>
 </head>
 <body>
@@ -72,6 +19,7 @@ video{width:100%;max-width:520px;border-radius:22px;background:#111;transform:sc
 <div class="step"><div class="fingers">🖐️</div>4 นิ้ว = D</div>
 </div><button class="start" id="startBtn">เริ่มเกมและเปิดกล้อง</button>
 <div class="note">ตอบแล้วต้องปล่อยมือก่อนจึงจะตอบข้อถัดไปได้</div></div>
+
 <div class="card game" id="gameArea">
 <div class="progress-row"><span id="questionNumber">ข้อ 1 / 5</span><span id="scoreText">คะแนน 0</span></div>
 <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
@@ -80,23 +28,29 @@ video{width:100%;max-width:520px;border-radius:22px;background:#111;transform:sc
 <div class="options" id="options"></div>
 <div class="camera-wrap"><video id="video" autoplay playsinline muted></video><div class="status" id="status">กำลังรอกล้อง...</div></div>
 </div>
+
 <div class="card game-over" id="gameOver">
 <div class="complete-label">GAME COMPLETE</div><h2>จบภารกิจ 5W1H</h2>
 <div class="final-score" id="finalScore">0 / 5</div><div class="final-message" id="finalMessage"></div>
 <button class="restart" id="restartBtn">เล่นอีกครั้ง</button>
 </div>
 </div>
+
 <script>
 const questions=[
-{type:"WHAT",question:"ปัญหาหรือสิ่งที่เรากำลังแก้คืออะไร?",image:"what.png",choices:["ปัญหาขยะในห้องเรียน","จำนวนเพื่อนในห้อง","สีของห้องเรียน","เวลาพักกลางวัน"],correct:0},
+{type:"WHAT",question:"ปัญหาหรือสิ่งที่เรากำลังแก้คืออะไร?",image:"what.png",choices:["สีของโรงเรียน","ปัญหาขยะในโรงเรียน","เวลาพักกลางวัน","จำนวนเพื่อนในห้อง"],correct:1},
 {type:"WHO",question:"ใครเกี่ยวข้องกับปัญหานี้มากที่สุด?",image:"who.png",choices:["นักเรียนและครู","คนที่อยู่ต่างจังหวัด","นักท่องเที่ยว","ผู้โดยสารบนรถไฟ"],correct:0},
-{type:"WHERE",question:"ปัญหานี้เกิดขึ้นที่ไหน?",image:"where.png",choices:["สนามกีฬา","ห้องเรียน","สนามบิน","ชายหาด"],correct:1},
-{type:"WHY",question:"ทำไมปัญหานี้จึงเกิดขึ้น?",image:"why.png",choices:["ไม่มีใครใช้ห้องเรียน","มีการทิ้งขยะไม่เป็นที่","ฝนตกทุกวัน","โรงเรียนปิด"],correct:1},
+{type:"WHERE",question:"ปัญหานี้เกิดขึ้นที่ไหน?",image:"where.png",choices:["สนามกีฬา","ชายหาด","โรงเรียน","สนามบิน"],correct:2},
+{type:"WHY",question:"ทำไมปัญหานี้จึงเกิดขึ้น?",image:"why.png",choices:["ไม่มีใครใช้โรงเรียน","มีการทิ้งขยะไม่เป็นที่","ฝนตกทุกวัน","โรงเรียนปิด"],correct:1},
 {type:"WHEN",question:"ปัญหานี้มักเกิดขึ้นเมื่อใด?",image:"when.png",choices:["หลังรับประทานอาหารหรือช่วงพัก","ตอนโรงเรียนปิดเทอม","ตอนกลางดึก","เฉพาะวันหยุดยาว"],correct:0}
 ];
+
 let currentQuestion=0,score=0,choices=[],stream=null,handLandmarker=null,animationId=null,cameraRunning=false,answerLocked=false,waitingForRelease=false,holdStart=0,mediapipeReady=false;
+
 const startBtn=document.getElementById("startBtn"),restartBtn=document.getElementById("restartBtn"),gameArea=document.getElementById("gameArea"),gameOver=document.getElementById("gameOver"),video=document.getElementById("video"),statusEl=document.getElementById("status"),optionsEl=document.getElementById("options"),questionTitle=document.getElementById("questionTitle"),questionNumber=document.getElementById("questionNumber"),scoreText=document.getElementById("scoreText"),progressBar=document.getElementById("progressBar"),scenarioImage=document.getElementById("scenarioImage");
+
 function shuffleArray(arr){const copy=[...arr];for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]];}return copy;}
+
 function showQuestion(){
 const q=questions[currentQuestion];choices=shuffleArray(q.choices.map((text,index)=>({text,index})));
 questionNumber.textContent=`ข้อ ${currentQuestion+1} / ${questions.length}`;scoreText.textContent=`คะแนน ${score}`;progressBar.style.width=`${((currentQuestion+1)/questions.length)*100}%`;
@@ -106,6 +60,7 @@ optionsEl.innerHTML="";
 choices.forEach((choice,i)=>{const b=document.createElement("button");b.className="option";b.innerHTML=`<strong>${String.fromCharCode(65+i)}.</strong> ${choice.text}`;b.onclick=()=>answer(i);optionsEl.appendChild(b);});
 answerLocked=false;waitingForRelease=false;holdStart=0;statusEl.textContent="ชู 1–4 นิ้วค้างประมาณ 0.8 วินาทีเพื่อเลือกคำตอบ";
 }
+
 function answer(displayIndex){
 if(answerLocked||waitingForRelease)return;answerLocked=true;waitingForRelease=true;
 const selected=choices[displayIndex],correct=questions[currentQuestion].correct,buttons=[...document.querySelectorAll(".option")];
@@ -114,6 +69,7 @@ if(selected.index===correct){score++;buttons[displayIndex].classList.add("correc
 scoreText.textContent=`คะแนน ${score}`;
 setTimeout(()=>{if(currentQuestion<questions.length-1){currentQuestion++;showQuestion();}else endGame();},1000);
 }
+
 async function loadMediaPipe(){
 if(mediapipeReady)return true;
 statusEl.textContent="กำลังโหลดระบบตรวจจับมือ...";
@@ -125,9 +81,11 @@ handLandmarker=await HandLandmarker.createFromOptions(fileset,{baseOptions:{mode
 mediapipeReady=true;return true;
 }catch(e){console.error(e);statusEl.textContent="โหลดระบบตรวจจับมือไม่สำเร็จ แต่ยังใช้ปุ่ม A–D ได้";return false;}
 }
+
 function countFingers(l){
 if(!l)return 0;let n=0;[[8,6],[12,10],[16,14],[20,18]].forEach(([tip,pip])=>{if(l[tip].y<l[pip].y)n++;});return n;
 }
+
 function detectLoop(){
 if(!cameraRunning||!handLandmarker||video.readyState<2){if(cameraRunning)animationId=requestAnimationFrame(detectLoop);return;}
 try{
@@ -141,12 +99,15 @@ else{holdStart=0;statusEl.textContent="ชู 1–4 นิ้วค้างป�
 }}catch(e){console.error(e);}
 animationId=requestAnimationFrame(detectLoop);
 }
+
 async function startCamera(){
 if(cameraRunning)return;
 try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:"user",width:{ideal:640},height:{ideal:480}},audio:false});video.srcObject=stream;await video.play();cameraRunning=true;statusEl.textContent="เปิดกล้องแล้ว กำลังตรวจจับมือ...";animationId=requestAnimationFrame(detectLoop);}
 catch(e){console.error(e);statusEl.textContent="เปิดกล้องไม่ได้ — อนุญาต Camera หรือใช้ปุ่ม A–D";}
 }
-function stopCamera(){cameraRunning=false;if(animationId){cancelAnimationFrame(animationId);animationId=null;}if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;}video.srcObject=null}
+
+function stopCamera(){cameraRunning=false;if(animationId){cancelAnimationFrame(animationId);animationId=null;}if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;}video.srcObject=null;}
+
 async function startGame(){currentQuestion=0;score=0;gameOver.style.display="none";gameArea.style.display="block";startBtn.disabled=true;showQuestion();await loadMediaPipe();await startCamera();}
 function endGame(){stopCamera();gameArea.style.display="none";gameOver.style.display="block";document.getElementById("finalScore").textContent=`${score} / ${questions.length}`;document.getElementById("finalMessage").textContent=score===5?"ยอดเยี่ยมมาก! คุณเข้าใจ 5W1H ได้ครบถ้วน":score>=4?"เก่งมาก! วิเคราะห์สถานการณ์ได้ดี":score>=3?"ทำได้ดี ลองเล่นอีกครั้งเพื่อพัฒนา":"ลองเล่นอีกครั้ง แล้วฝึกคิดแบบ 5W1H";}
 function resetGame(){stopCamera();currentQuestion=0;score=0;gameOver.style.display="none";gameArea.style.display="block";showQuestion();startCamera();}
